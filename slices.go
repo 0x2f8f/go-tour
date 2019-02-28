@@ -8,6 +8,7 @@ func main()  {
 	slices3();
 	slices4();
 	slices5();
+	slices6();
 }
 
 func slices1()  {
@@ -58,10 +59,23 @@ func slices4()  {
 	fmt.Println(st)
 }
 
-//без указания
-func slices5()  {
+//без указания верхней или нижней границы
+func slices5() {
 	a := [6]int{0,1,2,3,4,5}
 	s1 := a[1:]
 	s2 := a[:3]
 	fmt.Println(s1, s2)
+}
+
+func slices6() {
+	println("------")
+	s := []int{0,1,2,3,4,5}
+	printSlice(s)
+
+	s = s[:3]
+	printSlice(s)
+}
+
+func printSlice(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
