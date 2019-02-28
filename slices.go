@@ -7,6 +7,7 @@ func main()  {
 	slices2();
 	slices3();
 	slices4();
+	slices5();
 }
 
 func slices1()  {
@@ -55,4 +56,12 @@ func slices4()  {
 		{2, false},
 	}
 	fmt.Println(st)
+}
+
+//без указания
+func slices5()  {
+	a := [6]int{0,1,2,3,4,5}
+	s1 := a[1:]
+	s2 := a[:3]
+	fmt.Println(s1, s2)
 }
