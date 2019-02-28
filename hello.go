@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	fmt.Println("Hello, world")
+	fmt.Println("Current time:", time.Now())
 }
 
 /*
