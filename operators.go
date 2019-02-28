@@ -11,13 +11,35 @@ func main() {
 	for1()
 	for2()
 	for3()
+	
 	while1()
+	
 	if1()
 	if2()
+	
 	switch1()
 	switch2()
 	switch3()
 	switch4()
+	
+	defer1()
+	defer2()
+}
+
+func defer1()  {
+	defer for1();
+	for2();
+}
+
+//работает как стек
+func defer2()  {
+	fmt.Println("counting")
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+	fmt.Println("done")
 }
 
 func switch4() {
