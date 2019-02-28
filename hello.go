@@ -16,8 +16,15 @@ func main() {
 //	fmt.Println(add(2,3))
 //	testSwap()
 //	fmt.Println(split(17))
-	variables()
-	variables2()
+//	variables()
+//	variables2()
+	variables3()
+}
+
+func variables3() {
+	k := 3
+	c, python, java := false, true, "yes!"
+	fmt.Println(k, c, python, java)
 }
 
 func variables() {
