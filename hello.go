@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+var c, python, java bool
+var a, b, d = true, false, "no!"
+var i, j int = 1,2
+
 func main() {
 //	fmt.Println("Hello, world")
 //	fmt.Println("Current time:", time.Now())
@@ -11,7 +15,18 @@ func main() {
 //	fmt.Println(math.Pi)
 //	fmt.Println(add(2,3))
 //	testSwap()
-	fmt.Println(split(17))
+//	fmt.Println(split(17))
+	variables()
+	variables2()
+}
+
+func variables() {
+	var i int
+	fmt.Println(c, python, java, i, j, a, b, d)
+}
+
+func variables2() {
+	fmt.Println(c, python, java, i, j, a, b, d)
 }
 
 func split(sum int) (y, z int) {
