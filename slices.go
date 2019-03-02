@@ -21,8 +21,10 @@ func main()  {
 
 	range1();
 	range2();
-	println("------")
 	range3();
+
+	println("------")
+	slices8()
 }
 
 func slices1()  {
@@ -110,6 +112,16 @@ func slices7()  {
 	for i := 0; i < len(board); i++ {
 		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
+}
+
+func slices8()  {
+	var s [6]int
+	s[1] = 2
+
+	t := []int{}
+	t = append(t,1)
+	fmt.Println(s)
+	fmt.Println(t)
 }
 
 //нулевой слайс
