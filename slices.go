@@ -9,6 +9,8 @@ func main()  {
 	slices4();
 	slices5();
 	slices6();
+	slices7();
+	slices8();
 }
 
 func slices1()  {
@@ -67,15 +69,46 @@ func slices5() {
 	fmt.Println(s1, s2)
 }
 
+//размеры и вместимость в слайсах
 func slices6() {
-	println("------")
 	s := []int{0,1,2,3,4,5}
 	printSlice(s)
 
 	s = s[:3]
 	printSlice(s)
+
+	var d = s[:1]
+	printSlice(d)
+}
+
+//нулевой слайс
+func slices7() {
+	var s []int
+	printSlice(s)
+	if (s == nil) {
+		fmt.Printf("nil! %T\n", s)
+	}
+}
+
+func slices8()  {
+	println("------")
+	a := make([]int, 5)  // len(a)=5, cap(a)=5
+	printSlice(a)
+
+	b := make([]int, 0, 5) // len(b)=0, cap(b)=5
+	printSlice(b)
+
+	c := b[:2] // len(c)=2, cap(c)=5
+	printSlice(c)
+
+	d := c[2:5] // len(d)=3, len(d)=3
+	printSlice(d)
+
+	e := make([]int, 4, 5) // len(e)=4, cap(e)=5
+	printSlice(e)
 }
 
 func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
+
