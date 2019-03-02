@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"strings"
+)
 
 func main()  {
 	slices1();
@@ -10,7 +14,15 @@ func main()  {
 	slices5();
 	slices6();
 	slices7();
-	slices8();
+
+	nil1();
+	make1();
+	append1();
+
+	range1();
+	range2();
+	println("------")
+	range3();
 }
 
 func slices1()  {
@@ -81,8 +93,27 @@ func slices6() {
 	printSlice(d)
 }
 
+//двумерный слайс. Слайс состоит из слайсов
+func slices7()  {
+	board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+
+	board[0][0] = "X"
+	board[0][2] = "X"
+	board[1][0] = "O"
+	board[1][2] = "X"
+	board[2][2] = "O"
+
+	for i := 0; i < len(board); i++ {
+		fmt.Printf("%s\n", strings.Join(board[i], " "))
+	}
+}
+
 //нулевой слайс
-func slices7() {
+func nil1() {
 	var s []int
 	printSlice(s)
 	if (s == nil) {
@@ -90,8 +121,8 @@ func slices7() {
 	}
 }
 
-func slices8()  {
-	println("------")
+//создание через make
+func make1()  {
 	a := make([]int, 5)  // len(a)=5, cap(a)=5
 	printSlice(a)
 
@@ -108,7 +139,69 @@ func slices8()  {
 	printSlice(e)
 }
 
+//добавлнение элемента в слайс
+func append1()  {
+	var s []int
+	printSlice(s)
+
+	// append works on nil slices.
+	s = append(s, 0)
+	printSlice(s)
+
+	// The slice grows as needed.
+	s = append(s, 1)
+	printSlice(s)
+
+	// We can add more than one element at a time.
+	s = append(s, 2, 3, 4)
+	printSlice(s)
+}
+
+//цицкл for с range, к-ый возвращает индекс и копию элемента
+//работает как foreach
+func range1()  {
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+}
+
+//range без индекса
+func range2()  {
+	pow := make([]int, 10)
+	for i := range pow {
+		pow[i] = 1 << uint(i) // == 2**i
+	}
+	for _, value := range pow {
+		fmt.Printf("%d\n", value)
+	}
+}
+
+func range3()  {
+	sl := Pic(4,4)
+	for i, v := range sl {
+		fmt.Printf("%d, %d\n", i, v)
+	}
+}
+
+//dy - размер слайса
+//dx - размер внутреннних слайсов
+//внутренний слайс состоит из 8-битных беззнаковых целых чисел
+//func Pic(dx, dy int) [][]uint8 {
+func Pic(dx, dy int) [][]uint8 {
+	sl := [][]uint8{}
+
+	for i:=0;i<dx;i++ {
+		kl := []uint8{}
+		for j:=0;j<dy;j++ {
+			kl = append(kl, uint8(rand.Intn(10)))
+		}
+		sl = append(sl, kl)
+	}
+
+	return sl
+}
+
 func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
-
