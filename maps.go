@@ -20,11 +20,12 @@ func maps1()  {
 	fmt.Println(m["Bell Labs"])
 }
 
+/*
 func maps2()  {
 	m := map[int]string
 	m[0]="Serg"
-
 }
+*/
 
 func mapsLiterals1()  {
 	var m = map[string]Vertex{
