@@ -7,24 +7,26 @@ import (
 )
 
 func main()  {
-	slices1();
-	slices2();
-	slices3();
-	slices4();
-	slices5();
-	slices6();
-	slices7();
-
-	nil1();
-	make1();
-	append1();
-
-	range1();
-	range2();
-	range3();
-
-	println("------")
+	slices1()
+	slices2()
+	slices3()
+	slices4()
+	slices5()
+	slices6()
+	slices7()
 	slices8()
+	slices9()
+
+	nil1()
+	make1()
+	append1()
+
+	range1()
+	range2()
+	range3()
+
+	println("-----------")
+	slices10()
 }
 
 func slices1()  {
@@ -58,7 +60,7 @@ func slices3()  {
 
 //литералы срезов
 //в этих ситуациях на самом деле вначале в памяти создаётся массив,
-// а после слайс, который на негол ссылается
+// а после слайс, который на него ссылается
 func slices4()  {
 	si := []int{1, 2, 3}
 	sb := []bool{true, true, false}
@@ -122,6 +124,29 @@ func slices8()  {
 	t = append(t,1)
 	fmt.Println(s)
 	fmt.Println(t)
+}
+
+//двумерный массив
+func slices9() {
+	var twoD [2][3]int
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 3; j++ {
+			twoD[i][j] = i + j
+		}
+	}
+	fmt.Println("двумерный массив: ", twoD)
+}
+
+//динамический двумерный массив
+func slices10()  {
+	n := 3
+	k := make([][]int, n, n)
+	k[0]=make([]int, n, n)
+	k[0][0]=1
+	k[0][1]=1
+	k[0][2]=0
+	fmt.Println(k)
+
 }
 
 //нулевой слайс

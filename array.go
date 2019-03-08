@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main()  {
-	array1()
-	array2()
-	array3()
+	//array1()
+	//array2()
+	//array3()
 }
 
 func array1()  {
