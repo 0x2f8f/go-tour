@@ -11,7 +11,8 @@ func main()  {
 	//channels4()
 	//channels5()
 	//channels6()
-	channels7()
+	//channels7()
+	channels8()
 }
 
 //канал с типом int
@@ -102,6 +103,7 @@ func channels6()  {
 	fmt.Println("The End")
 }
 
+//ёмкость и кол-во элементов
 func channels7()  {
 	intCh := make(chan int, 3)
 	intCh <- 10
@@ -113,4 +115,21 @@ func channels7()  {
 	fmt.Println(len(intCh))     // 1
 
 	fmt.Println(<-intCh)
+}
+
+//динамическое объявление размера канала
+//берём значения из канала, пока берется
+func channels8() {
+	var n, k int
+	n = 3
+	intCh := make(chan int, n)
+
+	intCh <- 11
+	intCh <- 22
+	intCh <- 33
+
+	for len(intCh) > 0 {
+		k = <- intCh
+		fmt.Println(k)
+	}
 }
