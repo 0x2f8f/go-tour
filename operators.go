@@ -8,10 +8,13 @@ import (
 )
 
 func main() {
+	/*
 	for1()
 	for2()
 	for3()
-	
+	*/
+	foreach1()
+
 	while1()
 	
 	if1()
@@ -24,8 +27,10 @@ func main() {
 	
 	defer1()
 	defer2()
+
 }
 
+//defer - отложенный вызов
 func defer1()  {
 	defer for1();
 	for2();
@@ -123,6 +128,14 @@ func for3() {
 	sum := 1
 	for ; sum<100;sum+=sum {}
 	println(sum)
+}
+
+//работает как foreach
+func foreach1()  {
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+	for _, v := range pow {
+		fmt.Println(v)
+	}
 }
 
 func while1() {
