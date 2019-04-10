@@ -11,14 +11,14 @@ func main()  {
 	maps2()
 }
 
-type Vertex struct {
+type Vertex1 struct {
 	Lt, Ln float64
 }
 
 func maps1()  {
-	var m map[string]Vertex
-	m = make(map[string]Vertex)
-	m["Bell Labs"] = Vertex{
+	var m map[string]Vertex1
+	m = make(map[string]Vertex1)
+	m["Bell Labs"] = Vertex1{
 		40.68433, -74.39967,
 	}
 	fmt.Println(m["Bell Labs"])
@@ -49,11 +49,11 @@ func maps2()  {
 }
 
 func mapsLiterals1()  {
-	var m = map[string]Vertex{
-		"Bell Labs": Vertex{
+	var m = map[string]Vertex1{
+		"Bell Labs": Vertex1{
 			40.68433, -74.39967,
 		},
-		"Google": Vertex{
+		"Google": Vertex1{
 			37.42202, -122.08408,
 		},
 	}
