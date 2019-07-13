@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 var c, python, java bool
 var a, b, d = true, false, "no!"
@@ -14,11 +12,11 @@ func main() {
 //	fmt.Println("Random number:", rand.Intn(10))
 //	fmt.Println(math.Pi)
 //	fmt.Println(add(2,3))
-//	testSwap()
+	testSwap()
 //	fmt.Println(split(17))
 //	variables()
 //	variables2()
-	variables3()
+//	variables3()
 }
 
 func variables3() {

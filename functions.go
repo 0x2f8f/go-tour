@@ -7,10 +7,10 @@ func main()  {
 }
 
 func functions1()  {
-	fmt.Println(add(42, 13))
+	fmt.Println(add2(42, 13))
 }
 
 //складывание чисел
-func add(x int, y int) int {
+func add2(x int, y int) int {
 	return x + y
 }
