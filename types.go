@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 var (
 	tobe bool = false
@@ -16,6 +19,8 @@ func main () {
 	typeConversions2()
 	typeConversions3()
 	println(Pi)
+
+	getTypesExample()
 }
 
 //приведение типа
@@ -48,6 +53,16 @@ func types() {
 	fmt.Printf("Type: %T, value: %v\n", tobe, tobe)
 	fmt.Printf("Type: %T, value: %v\n", MaxInteger, MaxInteger)
 	fmt.Printf("Type: %T, value: %v\n", F, F)
+}
+
+func getTypesExample() {
+	tst := "string"
+	tst2 := 10
+	tst3 := 1.2
+
+	fmt.Println(reflect.TypeOf(tst))
+	fmt.Println(reflect.TypeOf(tst2))
+	fmt.Println(reflect.TypeOf(tst3))
 }
 
 /**
