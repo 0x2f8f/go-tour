@@ -6,10 +6,8 @@ import (
 )
 
 func main() {
-	s, sep := "", ""
-	for _, arg := range os.Args[1:] {
-		s += sep + arg
-		sep = "_"
+	fmt.Println("Command name: " +os.Args[0])
+	for ind, arg := range os.Args[1:] {
+		fmt.Println(ind,": ",arg)
 	}
-	fmt.Println(s)
 }
